@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Flex, Text, Image } from "@chakra-ui/react";
 import redDot from "../../Assets/Svg/redDot.svg";
 import whyBranding1 from "../../Assets/Images/whyBrandImg.png";
+import whyBranding2 from "../../Assets/Images/whyBrandImg2.png";
+import whyBranding3 from "../../Assets/Images/whyBrandImg3.png";
 const WhyBranding = () => {
+  const [currentImage, setCurrentImage] = useState(whyBranding1);
+
+  useEffect(() => {
+    const changeImage = () => {
+      // Define the sequence of images
+      const images = [whyBranding1, whyBranding2, whyBranding3];
+      // Calculate the next image index
+      const nextIndex = (images.indexOf(currentImage) + 1) % images.length;
+      // Set the new image
+      setCurrentImage(images[nextIndex]);
+    };
+
+    const intervalId = setInterval(changeImage, 7000); // Change image every 3 seconds
+
+    return () => clearInterval(intervalId); // Cleanup function
+
+  }, [currentImage]); // Run effect whenever currentImage changes
+
   return (
     <Flex
       justifyContent="center"
@@ -81,7 +101,7 @@ const WhyBranding = () => {
       </Box>
 
       <Flex justifyContent="flex-end" flex="1">
-        <Image src={whyBranding1} />
+        <Image src={currentImage} />
       </Flex>
     </Flex>
   );
