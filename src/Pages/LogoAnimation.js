@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Box, Flex, Image } from "@chakra-ui/react";
 import { keyframes } from "@emotion/react";
 import logoConstruction from "../Assets/Png/logoConstruction.svg";
-import yoursassistance from "../Assets/Svg/yoursassistance.svg";
+import yoursassistance from "../Assets/Svg/yoursassistanceB.svg";
 import { TypeAnimation } from "react-type-animation";
 import { useMediaQuery } from "@chakra-ui/react";
 
