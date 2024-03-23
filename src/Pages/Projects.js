@@ -1,10 +1,6 @@
-import React, { useState, } from "react";
+import React, { useState } from "react";
 import { useMediaQuery } from "@chakra-ui/react";
-import {
-  Box,
-  Button,
-  Flex,
-} from "@chakra-ui/react";
+import { Box, Button, Flex } from "@chakra-ui/react";
 import Header from "../Components/Header";
 import AboutHero from "../Components/About Components/AboutHero";
 import data from "../Utilities/Data";
@@ -99,24 +95,24 @@ const Projects = () => {
             )}
 
             {visibleProjects < data.length && (
-              <Box>
+              <Flex justifyContent="center">
                 <Button
-                  width="90%"
+                  width="15%"
                   marginX="5%"
-                  fontSize={{ base: "20px", md: "36px" }}
+                  fontSize={{ base: "16px", md: "22px" }}
                   backgroundColor="#0298DA"
                   fontWeight="bold"
-                  paddingY={{ base: "8%", md: "3%" }}
-                  borderRadius="10px"
+                  paddingY={{ base: "8%", md: "2.5%" }}
+                  borderRadius="50px"
                   color="white"
-                  colorScheme="red"
+                  colorScheme="#0298DA"
                   transition="1s ease-in"
                   onClick={handleViewMore}
                   marginY={{ base: "5%", md: "5%" }}
                 >
                   View More
                 </Button>
-              </Box>
+              </Flex>
             )}
           </Box>
         )}
