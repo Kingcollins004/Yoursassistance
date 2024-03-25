@@ -51,8 +51,8 @@ const HomeHeroSection = () => {
         </Box>
       </Flex>
 
-      <Flex marginTop="2%" justifyContent="flex-end" flex="1">
-        <Image src={HeroImg} />
+      <Flex marginTop="2%" justifyContent="center" flex="1">
+        <Image width="80%" src={HeroImg} />
       </Flex>
     </Flex>
   );
