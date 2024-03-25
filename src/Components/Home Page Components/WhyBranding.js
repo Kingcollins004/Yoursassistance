@@ -20,7 +20,6 @@ const WhyBranding = () => {
     const intervalId = setInterval(changeImage, 7000); // Change image every 3 seconds
 
     return () => clearInterval(intervalId); // Cleanup function
-
   }, [currentImage]); // Run effect whenever currentImage changes
 
   return (
@@ -30,9 +29,10 @@ const WhyBranding = () => {
       paddingX="10%"
       paddingY="5%"
       backgroundColor="#EEF6FE"
+      flexDirection={{ base: "column", sm: "row" }}
     >
       <Box flex="1">
-        <Text fontSize="48px" fontWeight="semibold">
+        <Text fontSize={{ base: "28px", sm: "48px" }} fontWeight="semibold">
           Why company & business branding{" "}
           <span style={{ color: "#ED3237" }}>important.</span>
         </Text>
@@ -41,16 +41,16 @@ const WhyBranding = () => {
           justifyContent="flex-start "
           alignItems="flex-start"
         >
-          <Image marginTop="1%" src={redDot} />
+          <Image marginTop="1%" width={{ base: "16px", sm: "22px" }} src={redDot} />
           <Box marginLeft="2%">
-            <Text fontSize="22px" fontWeight="semibold">
+            <Text fontSize={{ base: "16px", sm: "22px" }} fontWeight="semibold">
               Creating Identity and Recognition
             </Text>
-            <Text fontSize="16px">
+            <Text fontSize={{ base: "14px", sm: "16px" }}>
               Branding gives your business a distinguishable personality,
               separating you from competitors in a crowded market.
             </Text>
-            <Text fontSize="16px" marginTop="2%">
+            <Text fontSize={{ base: "14px", sm: "16px" }} marginTop="2%">
               A consistent brand image (logo, colors, fonts, etc.) makes you
               easily recognizable, helping customers find and remember you.
             </Text>
@@ -62,16 +62,16 @@ const WhyBranding = () => {
           justifyContent="flex-start "
           alignItems="flex-start"
         >
-          <Image marginTop="1%" src={redDot} />
+          <Image marginTop="1%" width={{ base: "16px", sm: "22px" }} src={redDot} />
           <Box marginLeft="2%">
-            <Text fontSize="22px" fontWeight="semibold">
+            <Text fontSize={{ base: "16px", sm: "22px" }} fontWeight="semibold">
               Builds Trust and Credibility
             </Text>
-            <Text fontSize="16px">
+            <Text fontSize={{ base: "14px", sm: "16px" }}>
               A well-developed brand conveys professionalism and reliability,
               boosting your customer's confidence in your business.
             </Text>
-            <Text fontSize="16px" marginTop="2%">
+            <Text fontSize={{ base: "14px", sm: "16px" }} marginTop="2%">
               Consistent branding across all platforms - website, social media,
               marketing materials - reinforces this positive image.
             </Text>
@@ -83,16 +83,16 @@ const WhyBranding = () => {
           justifyContent="flex-start "
           alignItems="flex-start"
         >
-          <Image marginTop="1%" src={redDot} />
+          <Image marginTop="1%" width={{ base: "16px", sm: "22px" }} src={redDot} />
           <Box marginLeft="2%">
-            <Text fontSize="22px" fontWeight="semibold">
+            <Text fontSize={{ base: "16px", sm: "22px" }} fontWeight="semibold">
               Influences Customer Choice
             </Text>
-            <Text fontSize="16px">
+            <Text fontSize={{ base: "14px", sm: "16px" }}>
               Branding goes beyond visuals; it communicates your values,
               mission, and unique selling proposition.
             </Text>
-            <Text fontSize="16px" marginTop="2%">
+            <Text fontSize={{ base: "14px", sm: "16px" }} marginTop="2%">
               This messaging resonates with customers who identify with your
               brand, making them more likely to choose you over competitors.
             </Text>
@@ -100,9 +100,9 @@ const WhyBranding = () => {
         </Flex>
       </Box>
 
-      <Flex justifyContent="flex-end" flex="1">
+      <Flex margin={{ base: "10% 0", sm: "0" }} justifyContent="flex-end" flex="1">
         <Image src={currentImage} />
-      </Flex>
+      </Flex> 
     </Flex>
   );
 };

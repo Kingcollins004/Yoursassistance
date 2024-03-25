@@ -1,11 +1,9 @@
 import { Box, Button, Image, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
-import seedtimeImg from "../../Assets/Images/seedtimeImg.png";
-import EdwinCare from "../../Assets/Images/edwinCareImg.png";
 import yoursassistanceImg from "../../Assets/Images/yoursassistanceImg.png";
 
-const RecentProjects = () => {
-  const [edwincare, setEdwincare] = useState(false);
+const GraphicsServices = () => {
+    const [edwincare, setEdwincare] = useState(false);
   const [seedtime, setSeedtime] = useState(false);
   const [yoursassistance, setYoursassistance] = useState(false);
 
@@ -32,27 +30,22 @@ const RecentProjects = () => {
   const onMouseLeaveYoursassistance = () => {
     setYoursassistance(false);
   };
-
   return (
     <Box padding="5% 10%">
-      <Text
-        fontSize={{ base: "28px", sm: "48px" }}
-        color="#ED3237"
-        fontWeight="semibold"
-      >
+      <Text fontSize="48px" color="#ED3237" fontWeight="semibold">
         Recent Projects
       </Text>
 
-      <Box marginTop={{ base: "10%", sm: "5%" }}>
+      <Box marginTop="5%">
         <Box
           onMouseEnter={onMouseEnterEdwinCare}
           onMouseLeave={onMouseLeaveEdwinCare}
           borderTop="1px solid #E0E0E0"
           borderBottom="1px solid #E0E0E0"
-          paddingY={{ base: "8%", sm: "4%" }}
+          paddingY="4%"
           cursor="pointer"
         >
-          <Text fontSize={{ base: "16px", sm: "22px" }} fontWeight="semibold">
+          <Text fontSize="22px" fontWeight="semibold">
             Edwin Care Services
           </Text>
           {edwincare && (
@@ -61,7 +54,7 @@ const RecentProjects = () => {
               position="absolute"
               left="50%"
               marginTop="-15%"
-              src={EdwinCare}
+              src={yoursassistanceImg}
               opacity={1}
             />
           )}
@@ -72,10 +65,10 @@ const RecentProjects = () => {
           onMouseLeave={onMouseLeaveSeedtime}
           borderTop="1px solid #E0E0E0"
           borderBottom="1px solid #E0E0E0"
-          paddingY={{ base: "8%", sm: "4%" }}
+          paddingY="4%"
           cursor="pointer"
         >
-          <Text fontSize={{ base: "16px", sm: "22px" }} fontWeight="semibold">
+          <Text fontSize="22px" fontWeight="semibold">
             Seedtime Landscape
           </Text>
           {seedtime && (
@@ -85,7 +78,7 @@ const RecentProjects = () => {
               position="absolute"
               left="50%"
               marginTop="-15%"
-              src={seedtimeImg}
+              src={yoursassistanceImg}
               opacity={1}
             />
           )}
@@ -95,9 +88,9 @@ const RecentProjects = () => {
           onMouseLeave={onMouseLeaveYoursassistance}
           borderTop="1px solid #E0E0E0"
           borderBottom="1px solid #E0E0E0"
-          paddingY={{ base: "8%", sm: "4%" }}
+          paddingY="4%"
         >
-          <Text fontSize={{ base: "16px", sm: "22px" }} fontWeight="semibold">
+          <Text fontSize="22px" fontWeight="semibold">
             Yoursassistance
           </Text>
           {yoursassistance && (
@@ -116,33 +109,33 @@ const RecentProjects = () => {
         <Box
           borderTop="1px solid #E0E0E0"
           borderBottom="1px solid #E0E0E0"
-          paddingY={{ base: "8%", sm: "4%" }}
+          paddingY="4%"
         >
-          <Text fontSize={{ base: "16px", sm: "22px" }} fontWeight="semibold">
+          <Text fontSize="22px" fontWeight="semibold">
             Vera Coth
           </Text>
         </Box>
         <Box
           borderTop="1px solid #E0E0E0"
           borderBottom="1px solid #E0E0E0"
-          paddingY={{ base: "8%", sm: "4%" }}
+          paddingY="4%"
         >
-          <Text fontSize={{ base: "16px", sm: "22px" }} fontWeight="semibold">
+          <Text fontSize="22px" fontWeight="semibold">
             Vixtus
           </Text>
         </Box>
         <Box
           borderTop="1px solid #E0E0E0"
           borderBottom="1px solid #E0E0E0"
-          paddingY={{ base: "8%", sm: "4%" }}
+          paddingY="4%"
         >
-          <Text fontSize={{ base: "16px", sm: "22px" }} fontWeight="semibold">
+          <Text fontSize="22px" fontWeight="semibold">
             Coast Wide Church
           </Text>
         </Box>
       </Box>
 
-      <Box textAlign="center" marginTop={{ base: "10%", sm: "3%" }}>
+      <Box textAlign="center" marginTop="3%">
         <Button
           backgroundColor="#0298DA"
           color="white"
@@ -154,7 +147,7 @@ const RecentProjects = () => {
         </Button>
       </Box>
     </Box>
-  );
-};
+  )
+}
 
-export default RecentProjects;
+export default GraphicsServices

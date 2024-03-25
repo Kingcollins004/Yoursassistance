@@ -6,7 +6,7 @@ import HomePage from "./Pages/HomePage";
 import LogoAnimation from "./Pages/LogoAnimation";
 import Projects from "./Pages/Projects";
 import Contact from "./Pages/Contact";
-// import Services from "./Pages/Services";
+import GraphicsServices from "./Pages/GraphicsServices";
 // import About from "./Pages/About";
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
             <Route element={<HomePage />} path="/" />
             <Route element={<Projects />} path="/projects" />
             <Route element={<Contact />} path="/contact-us" />
-            {/* <Route element={<Services />} path="/services" /> */}
+            <Route element={<GraphicsServices />} path="/grpahics-design-services" />
             {/* <Route element={<About />} path="/about-us" /> */}
           </Routes>
         ) : (

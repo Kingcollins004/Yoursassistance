@@ -3,11 +3,23 @@ body {
   font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+ 
 }
 
-.slick-slide{
-  margin-right: 15px;
+.slick-slide {
+  margin-right: 10px;
 }
-.slick-track{
-  height: 25vh;
+.slick-track {
+  min-height: 25vh;
+}
+.slick-dots{
+  display: none !important;
+}
+
+.serviceHeader:hover {
+  padding: 2%;
+  border-left: 2px solid #ED3237;
+  box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  
 }

@@ -26,9 +26,9 @@ const Footer = () => {
           <Image width={{ base: "60%", md: "50%" }} src={FlogoB} />
           <Image width="40%" marginTop="10%" src={contactUs} />
           <Button
-            borderRadius="10px"
+            borderRadius="50px"
             marginRight="1%"
-            padding={{ base: "8% 10%", md: "6% 12%" }}
+            padding={{ base: "6% 10%", md: "6% 12%" }}
             backgroundColor="#0298DA"
             color="white"
             marginTop="-26%"
@@ -133,13 +133,15 @@ const Footer = () => {
             placeholder="Enter your email"
             padding={{ base: "7% 4%", md: "6% 4%" }}
             borderRadius="10px"
+            marginTop="4%"
+
           />
           <Button
-            borderRadius="10px"
-            padding={{ base: "8% 10%", md: "6% 10%" }}
+            borderRadius="50px"
+            padding={{ base: "6% 10%", md: "6% 10%" }}
             backgroundColor="#0298DA"
             color="white"
-            marginTop="2%"
+            marginTop="4%"
             colorScheme="red"
             transition="1s ease-in"
           >

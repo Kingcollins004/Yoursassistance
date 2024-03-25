@@ -26,7 +26,7 @@ const HomePage = () => {
         justifyContent="center"
         marginBottom={{ base: "15%", md: "0" }}
         marginTop={{ base: "10%", md: "5%" }}
-        marginX="15%"
+        marginX={{base: "5%", sm: "15%"}}
       >
         <Image width={{ base: "100%", md: "100%" }} src={pageCover} />
       </Flex>

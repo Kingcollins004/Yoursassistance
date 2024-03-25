@@ -23,45 +23,97 @@ const HomeServices = () => {
     autoplaySpeed: 2000,
     cssEase: "linear",
   };
+
+  const settingsM = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 4000,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+  };
+
   return (
     <Box backgroundColor="#F7F7F7" padding="5% 2%" className="slider-container">
       <Box textAlign="center" marginBottom="3%">
-        <Text fontSize="48px" fontWeight="semibold">Our Services</Text>
+        <Text fontSize={{ base: "28px", sm: "48px" }} fontWeight="semibold">
+          Our Services
+        </Text>
+      </Box>
+      <Box height="35vh" marginTop="5%" display={{ base: "block", sm: "none" }}>
+        <Slider {...settingsM}>
+          <Box>
+            <Image marginRight="5%" src={service1} />
+          </Box>
+
+          <Box marginTop="30px">
+            <Image src={service2} />
+          </Box>
+
+          <Box>
+            <Image src={service3} />
+          </Box>
+
+          <Box marginTop="30px">
+            <Image src={service4} />
+          </Box>
+
+          <Box>
+            <Image src={service5} />
+          </Box>
+
+          <Box marginTop="30px">
+            <Image src={service6} />
+          </Box>
+
+          <Box>
+            <Image src={service7} />
+          </Box>
+
+          <Box marginTop="30px">
+            <Image src={service8} />
+          </Box>
+        </Slider>
       </Box>
 
-      <Slider {...settings}>
-        <Box>
-          <Image marginRight="5%" src={service1} />
-        </Box>
+      {/* desktop carousel */}
+      <Box display={{ base: "none", sm: "block" }}>
+        <Slider {...settings}>
+          <Box>
+            <Image marginRight="5%" src={service1} />
+          </Box>
 
-        <Box marginTop="30px">
-          <Image src={service2} />
-        </Box>
+          <Box marginTop="30px">
+            <Image src={service2} />
+          </Box>
 
-        <Box>
-          <Image src={service3} />
-        </Box>
+          <Box>
+            <Image src={service3} />
+          </Box>
 
-        <Box marginTop="30px">
-          <Image src={service4} />
-        </Box>
+          <Box marginTop="30px">
+            <Image src={service4} />
+          </Box>
 
-        <Box>
-          <Image src={service5} />
-        </Box>
+          <Box>
+            <Image src={service5} />
+          </Box>
 
-        <Box marginTop="30px">
-          <Image src={service6} />
-        </Box>
+          <Box marginTop="30px">
+            <Image src={service6} />
+          </Box>
 
-        <Box>
-          <Image src={service7} />
-        </Box>
+          <Box>
+            <Image src={service7} />
+          </Box>
 
-        <Box marginTop="30px">
-          <Image src={service8} />
-        </Box>
-      </Slider>
+          <Box marginTop="30px">
+            <Image src={service8} />
+          </Box>
+        </Slider>
+      </Box>
     </Box>
   );
 };

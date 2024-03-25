@@ -7,7 +7,11 @@ import giftImg from "../../Assets/Images/giftImg.png";
 
 const HomeAbout = () => {
   return (
-    <Flex alignItems="center" padding="5% 10%">
+    <Flex
+      flexDirection={{ base: "column", sm: "row" }}
+      alignItems="center"
+      padding="5% 10%"
+    >
       <Box flex="1">
         <Box>
           <Image src={dart} />
@@ -62,7 +66,7 @@ const HomeAbout = () => {
           </Box>
         </Box>
       </Box>
-      <Flex justifyContent="flex-end" flex="1">
+      <Flex margin={{base: "10% 0", sm: "0"}} justifyContent="flex-end" flex="1">
         <Image src={giftImg} />
       </Flex>
     </Flex>

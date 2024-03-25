@@ -17,9 +17,9 @@ const GetInTouch = () => {
   return (
     <Box>
       {isMobile ? (
-        <Box width="100%" backgroundColor="#F0F0F0" height="fit-content">
-          <Box width="92%" margin="auto" paddingTop="2%" paddingLeft="2%">
-            <Text fontSize="3rem" fontWeight="600">
+        <Box width="100%" backgroundColor="#fff" height="fit-content">
+          <Box width="92%" margin="auto" paddingTop="5%" paddingLeft="2%">
+            <Text fontSize="28px" fontWeight="600">
               Get In Touch
             </Text>
             <Flex flexDirection="column" width="97%">
@@ -27,17 +27,18 @@ const GetInTouch = () => {
                 src={contactImg}
                 width="97%"
                 height="65vh"
-                marginTop="3%"
+                
               />
-              <Box width="96%">
+              <Box width="100%">
                 <Text fontSize="1rem" fontWeight="600">
                   Name
                 </Text>
                 <Input
                   placeholder="John Doe"
-                  width="95%"
+                  width="100%"
                   height="7vh"
                   marginTop="2%"
+                  border="1px solid gray"
                 />
 
                 <Text fontSize="1rem" fontWeight="600" paddingTop="2%">
@@ -45,9 +46,10 @@ const GetInTouch = () => {
                 </Text>
                 <Input
                   placeholder="email@gmail.com"
-                  width="95%"
+                  width="100%"
                   height="7vh"
                   marginTop="2%"
+                  border="1px solid gray"
                 />
 
                 <Text fontSize="1rem" fontWeight="600" paddingTop="2%">
@@ -55,15 +57,16 @@ const GetInTouch = () => {
                 </Text>
                 <Input
                   placeholder="Enter your message"
-                  width="95%"
+                  width="100%"
                   height="25vh"
                   marginTop="2%"
+                  border="1px solid gray"
                 />
 
                 <Button
-                  borderRadius="10px"
+                  borderRadius="50px"
                   marginRight="1%"
-                  padding="2% 3%"
+                  padding="3% 3%"
                   backgroundColor="#0298DA"
                   color="white"
                   colorScheme="red"
