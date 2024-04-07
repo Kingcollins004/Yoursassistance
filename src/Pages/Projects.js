@@ -26,7 +26,7 @@ const Projects = () => {
     );
   };
   return (
-    <Box backgroundColor="#FAFAFA">
+    <Box backgroundColor="white">
       <Box>
         {clicked ? (
           <ProjectDetails

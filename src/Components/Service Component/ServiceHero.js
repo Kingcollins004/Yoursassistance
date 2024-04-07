@@ -1,189 +1,153 @@
-import React, { useState } from "react";
-import { Box, Flex, Button, Text } from "@chakra-ui/react";
-// import { useDisclosure } from "@chakra-ui/react";
+import React from "react";
+import { Flex, Text, Box, Button, Image } from "@chakra-ui/react";
+import HeroBMan from "../../Assets/Svg/serviceMan.svg";
+import HeroWMan from "../../Assets/Svg/serviceWoman.svg";
+import lineS from "../../Assets/Svg/lineSvgR.svg";
+import lineB from "../../Assets/Svg/lineSvgBR.svg";
+import quote from "../../Assets/Svg/quote.svg";
+import stars from "../../Assets/Svg/stars.svg";
+import arrowDown from "../../Assets/Svg/downArrow.svg";
 
 const ServiceHero = () => {
-  const [selectedButton, setSelectedButton] = useState("Discover");
-  //   const { onOpen, onClose, isOpen } = useDisclosure();
-
-  const handleClick = (button) => {
-    setSelectedButton(button);
-  };
-
-  const isButtonSelected = (button) => {
-    return selectedButton === button;
-  };
   return (
-    <Box padding="0 10%">
-      <Flex marginTop="5%" flexDirection={{ base: "column", md: "row" }}>
-        <Box flex="1">
-          <Text
-            fontSize={{ base: "32px", md: "64px" }}
-            fontWeight="800"
-            color="#0298DA"
-          >
-            THE WAY WE WORK
+    <Flex
+      flexDirection="column"
+      paddingX={{ base: "5%", sm: "7%" }}
+      paddingBottom="2%"
+      alignItems="center"
+      justifyContent="center"
+    >
+      <Flex
+        position="relative"
+        top="15%"
+        width="86vw"
+        justifyContent="space-between"
+      >
+        <Flex
+          justifyContent="flex-start"
+          flexDirection="column"
+          alignItems="flex-start"
+          width="50%"
+        >
+          <Image src={quote} />
+          <Text textAlign="left" width="60%" color="#7A7A7A" fontSize="20px">
+            Yoursassistance exceptional product design ensures our website’s
+            success.
+            <br />
+            <span style={{ fontWeight: "700" }}>Highly Recommended!!!</span>
           </Text>
-        </Box>
-        <Box flex="1">
-          <Text fontSize={{ base: "14px", md: "16px" }}>
-            A digital agency that knows the internet and people in equal
-            measure. End users, browsers, audiences, customers. We get them
-            because we are them. And because we spend more time online than
-            most, we have an eye for what works.
+        </Flex>
+
+        <Flex
+          width="50%"
+          justifyContent="flex-end"
+          flexDirection="column"
+          alignItems="flex-end"
+        >
+          <Image width="20%" src={stars} />
+          <Text fontSize="40px" fontWeight="700" color="#7A7A7A">
+            5+ Years
           </Text>
-        </Box>
+          <Text>Experience</Text>
+        </Flex>
       </Flex>
 
       <Flex
-        marginX={{ base: "0%", md: "20%" }}
+        textAlign="center"
+        flexDirection="column"
         alignItems="center"
-        justifyContent="center"
-        marginTop="5%"
+        flex="1"
+        marginTop="2%"
       >
-        <Box marginRight={{ base: "5%", md: "0" }} textAlign="center" flex="1">
-          <Button
-            padding={{ base: "2% 20%", md: "2% 25%" }}
-            backgroundColor={isButtonSelected("Discover") ? "#0298DA" : "white"}
-            color={isButtonSelected("Discover") ? "white" : "#0298DA"}
-            border="1px solid #0298DA"
-            borderRadius="30px"
-            onClick={() => handleClick("Discover")}
-            fontSize={{ base: "13px", md: "16px" }}
-            colorScheme="#0298DA"
-          >
-            Discover
-          </Button>
-        </Box>
-
-        <Box marginRight={{ base: "2%", md: "0" }} textAlign="center" flex="1">
-          <Button
-            backgroundColor={isButtonSelected("Define") ? "#0298DA" : "white"}
-            borderRadius="30px"
-            padding={{ base: "2% 20%", md: "2% 25%" }}
-            color={isButtonSelected("Define") ? "white" : "#0298DA"}
-            onClick={() => handleClick("Define")}
-            border="1px solid #0298DA"
-            fontSize={{ base: "13px", md: "16px" }}
-            colorScheme="#0298DA"
-          >
-            Define
-          </Button>
-        </Box>
-
-        <Box
-          marginRight={{ base: "2%", md: "0" }}
-          textAlign="center"
-          color="white"
-          flex="1"
+        <Image position="relative" left="6.5%" src={lineS} />
+        <Button
+          backgroundColor="white"
+          color="#393637"
+          borderRadius="50px"
+          width={{ base: "13%", sm: "135px" }}
+          height={{ base: "30px", sm: "45px" }}
+          fontSize={{ base: "14px", sm: "20px" }}
+          border="1px solid #393637"
+          fontWeight="600"
+          marginTop="-1%"
         >
-          <Button
-            backgroundColor={isButtonSelected("Build") ? "#0298DA" : "white"}
-            color={isButtonSelected("Build") ? "white" : "#0298DA"}
-            borderRadius="30px"
-            padding={{ base: "2% 20%", md: "2% 25%" }}
-            onClick={() => handleClick("Build")}
-            border="1px solid #0298DA"
-            fontSize={{ base: "13px", md: "16px" }}
-            colorScheme="#0298DA"
-          >
-            Build
-          </Button>
-        </Box>
+          Services!
+        </Button>
+        <Text
+          marginTop={{ base: "4%", sm: "2%" }}
+          width={{ base: "100%", sm: "100%" }}
+          color="#393637"
+          fontWeight="600"
+          fontSize={{ base: "28px", sm: "86px" }}
+          lineHeight="90px"
+        >
+          Explore or line of <span style={{ color: "#ED3237" }}>Services</span>.{" "}
+        </Text>
+        <Image position="relative" right="52%" marginTop="-3%" src={lineB} />
 
-        <Box textAlign="center" color="white" flex="1">
+        <Text
+          width={{ base: "100%", sm: "70%" }}
+          fontSize={{ base: "14px", sm: "24px" }}
+          color="#7A7A7A"
+          // marginY={{ base: "2%", sm: "1%" }}
+          marginTop="-2%"
+          marginBottom="2%"
+        >
+          It’s not the best product that sells but the best marketed product.
+        </Text>
+        <Flex marginTop="1%">
           <Button
-            backgroundColor={isButtonSelected("Deliver") ? "#0298DA" : "white"}
-            borderRadius="30px"
-            padding={{ base: "2% 20%", md: "2% 25%" }}
-            onClick={() => handleClick("Deliver")}
-            border="1px solid #0298DA"
-            color={isButtonSelected("Deliver") ? "white" : "#0298DA"}
-            fontSize={{ base: "13px", md: "16px" }}
-            colorScheme="#0298DA"
+            backgroundColor="#ED3237"
+            color="white"
+            borderRadius="50px"
+            width={{ base: "13%", sm: "239px" }}
+            height={{ base: "30px", sm: "72px" }}
+            fontSize={{ base: "14px", sm: "20px" }}
+            fontWeight="600"
+            marginRight="2%"
           >
-            Deliver
+            Explore Services
           </Button>
-        </Box>
+          <Button
+            backgroundColor="white"
+            color="#393637"
+            borderRadius="50px"
+            width={{ base: "13%", sm: "239px" }}
+            height={{ base: "30px", sm: "72px" }}
+            fontSize={{ base: "14px", sm: "20px" }}
+            border="1px solid #393637"
+            fontWeight="600"
+          >
+            Hire us
+          </Button>
+        </Flex>
       </Flex>
 
-      <Box>
-        <Flex
-          marginTop={{ base: "15%", md: "5%" }}
-          paddingBottom="2%"
-          borderBottom="1px solid #ED3237"
-        >
-          <Box flex="1">
-            <Text fontSize="14px" color="#0298DA" fontWeight="700">
-              01
-            </Text>
-            <Text
-              fontSize={{ base: "20px", md: "32px" }}
-              color="#0298DA"
-              fontWeight="700"
-            >
-              Brand Audit
-            </Text>
-          </Box>
-          <Box flex="2">
-            <Text fontSize={{ base: "13px", md: "16px" }}>
-              Brand Audit service goes beyond the surface, delving deep into the
-              heart of your brand to uncover its essence. Through meticulous
-              analysis, we identify strengths, refine weaknesses, and provide
-              strategic insights to ensure your brand not only stands out but
-              resonates powerfully with your target audience.
-            </Text>
-          </Box>
-        </Flex>
+      <Flex
+        position="relative"
+        marginTop="-19%"
+        justifyContent="space-between"
+        flex="1"
+      >
+        <Image
+          position="relative"
+          right="20%"
+          marginTop="15%"
+          width={{ base: "100%", sm: "80%" }}
+          src={HeroBMan}
+        />
+        <Image
+          position="relative"
+          left="20%"
+          width={{ base: "100%", sm: "80%" }}
+          src={HeroWMan}
+        />
+      </Flex>
 
-        <Flex marginTop="2%" paddingBottom="2%">
-          <Box flex="1">
-            <Text fontSize="14px" color="#0298DA" fontWeight="700">
-              02
-            </Text>
-            <Text
-              fontSize={{ base: "20px", md: "32px" }}
-              color="#0298DA"
-              fontWeight="700"
-            >
-              Audience Analysis
-            </Text>
-          </Box>
-          <Box flex="2">
-            <Text fontSize={{ base: "13px", md: "16px" }}>
-              We understand that reaching the right audience is crucial. Our
-              Audience Analysis service goes beyond demographics, delving into
-              the intricacies of behavior and preferences. With insightful data,
-              we help you tailor your message effectively, ensuring it resonates
-              with your audience and creates a lasting impact.
-            </Text>
-          </Box>
-        </Flex>
-
-        <Box textAlign="center" marginTop={{ base: "6%", md: "2%" }}>
-          <Button
-            colorScheme="#0298DA"
-            transition="1s ease-in"
-            backgroundColor="#0298DA"
-            color="white"
-            padding={{ base: "8% 10%", md: "2% 5%" }}
-            borderRadius="50px"
-          >
-            Contact us
-          </Button>
-        </Box>
+      <Box position="relative" marginTop="-15%">
+        <Image src={arrowDown} />
       </Box>
-
-      <Box textAlign="center" marginTop="15%">
-        <Text
-          fontSize={{ base: "28px" }}
-          display={{ base: "block", md: "none" }}
-          fontWeight={{ base: "600" }}
-        >
-          Our Services
-        </Text>
-      </Box>
-    </Box>
+    </Flex>
   );
 };
 

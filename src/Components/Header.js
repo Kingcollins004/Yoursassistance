@@ -1,21 +1,15 @@
 import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import logo from "../Assets/Svg/logo.svg";
-import { NavLink } from "react-router-dom";
-import {
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
-} from "@chakra-ui/react";
+import logoB from "../Assets/Svg/logoBlack.svg";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 import HeaderServices from "./HeaderServices";
 import menu from "../Assets/Svg/menu.svg";
+import background from "../Assets/Svg/navCont.svg";
 
 const Header = () => {
+  const { pathname } = useLocation();
   return (
     <Box>
       <Flex
@@ -101,75 +95,155 @@ const Header = () => {
       </Flex>
 
       {/* for Desktop view */}
-      <Flex display={{ base: "none", md: "flex" }} paddingX="10%" paddingY="2%">
-        <Box flex="1">
-          <Image src={logo} />
+      <Flex
+        display={{ base: "none", md: "flex" }}
+        justifyContent="space-between"
+        paddingX="7%"
+        paddingY="2%"
+        alignItems="center"
+        position="relative"
+        zIndex="1000"
+      >
+        <Box>
+          {pathname === "/projects" ? (
+            <Image src={logoB} />
+          ) : (
+            <Image src={logo} />
+          )}
         </Box>
-        <Flex justifyContent="flex-end" flex="1" alignItems="center">
-          <Flex justifyContent="flex-end" marginRight="3%">
-            <Box marginRight="10%">
-              <NavLink to="/" activeStyle={{ color: "blue", fontSize: "18px" }}>
-                <Text>Home</Text>
-              </NavLink>
-            </Box>
-            <Box marginRight="10%">
-              <NavLink
-                to="/about"
-                activeStyle={{ color: "blue", fontSize: "18px" }}
-              >
-                <Text>About</Text>
-              </NavLink>
-            </Box>
 
-            <Box marginRight="10%">
-              <Menu>
-                <MenuButton>
-                  <NavLink
-                    to="/services"
-                    activeStyle={{ color: "blue", fontSize: "18px" }}
-                  >
-                    <Text>Services</Text>
-                  </NavLink>
-                </MenuButton>
-
-                <MenuList
-                  width="500px"
-                  marginTop="3%"
-                  border="1px solid #EEF6FE"
-                  boxShadow="0px 4px 19px rgba(0, 0, 0, 0.15)"
+        <Flex
+          backgroundImage={background}
+          backgroundRepeat="no-repeat"
+          justifyContent="flex-start"
+          alignItems="center"
+          height="100px"
+          position="relative"
+          top="0"
+          float="right"
+        >
+          <Flex
+            width="484px"
+            justifyContent="space-between"
+            marginRight="8%"
+            marginLeft="30px"
+            alignItems="center"
+          >
+            <Box>
+              <Link to="/">
+                <Text
+                  style={
+                    pathname === "/"
+                      ? {
+                          backgroundColor: "#0298DA",
+                          color: "white",
+                        } // if the path is services change the color to red
+                      : pathname === "/services"
+                      ? {
+                          color: "#ED3237",
+                        }
+                      : pathname === "/projects"
+                      ? {
+                          color: "#393637",
+                        }
+                      : null
+                  }
+                  color="#0298DA"
+                  fontWeight="700"
+                  borderRadius="50px"
+                  textAlign="center"
+                  width="117px"
+                  padding="13px"
                 >
-                  <HeaderServices />
-                </MenuList>
-              </Menu>
+                  Home
+                </Text>
+              </Link>
             </Box>
 
-            <Box marginRight="10%">
-              <NavLink
-                to="/projects"
-                activeStyle={{ color: "blue", fontSize: "18px" }}
-              >
-                <Text>Projects</Text>
+            <Box>
+              <Link to="/services">
+                <Text
+                  style={
+                    pathname === "/services"
+                      ? {
+                          backgroundColor: "#ED3237",
+                          color: "white",
+                        }
+                      : pathname === "/projects"
+                      ? {
+                          color: "#393637",
+                        }
+                      : null
+                  }
+                  color="#0298DA"
+                  fontWeight="700"
+                  borderRadius="50px"
+                  textAlign="center"
+                  width="117px"
+                  padding="13px"
+                >
+                  Services
+                </Text>
+              </Link>
+            </Box>
+
+            <Box>
+              <NavLink to="/projects">
+                <Text
+                  style={
+                    pathname === "/projects"
+                      ? {
+                          backgroundColor: "#393637",
+                          color: "white",
+                        } // if the path is services change the color to red
+                      : pathname === "/services"
+                      ? {
+                          color: "#ED3237",
+                        }
+                      : null
+                  }
+                  color="#0298DA"
+                  fontWeight="700"
+                  borderRadius="50px"
+                  textAlign="center"
+                  width="117px"
+                  padding="13px"
+                >
+                  Projects
+                </Text>
               </NavLink>
             </Box>
-            <Box marginRight="10%">
-              <NavLink
-                to="/contact-us"
-                activeStyle={{ color: "blue", fontSize: "18px" }}
-              >
-                <Text>Contact</Text>
+
+            <Box>
+              <NavLink to="/contact-us">
+                <Text
+                  style={
+                    pathname === "/contact-us"
+                      ? {
+                          backgroundColor: "#0298DA",
+                          color: "white",
+                        } // if the path is services change the color to red
+                      : pathname === "/services"
+                      ? {
+                          color: "#ED3237",
+                        }
+                      : pathname === "/projects"
+                      ? {
+                          color: "#393637",
+                        }
+                      : null
+                  }
+                  color="#0298DA"
+                  fontWeight="700"
+                  borderRadius="50px"
+                  textAlign="center"
+                  width="117px"
+                  padding="13px"
+                >
+                  Contact
+                </Text>
               </NavLink>
             </Box>
-          </Flex>
-          <Flex justifyContent="flex-end">
-            <Button
-              backgroundColor="#0298DA"
-              color="white"
-              borderRadius="50px"
-              paddingY="15%"
-              paddingX="20px"
-            >
-              Explore Services
-            </Button>
           </Flex>
         </Flex>
       </Flex>

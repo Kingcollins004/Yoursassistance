@@ -1,8 +1,5 @@
-import { Box, Image, Text } from "@chakra-ui/react";
-import React from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+import { Box, Image, Flex, Text } from "@chakra-ui/react";
+import React, { useState } from "react";
 import service1 from "../../Assets/Images/service1.png";
 import service2 from "../../Assets/Images/service2.png";
 import service3 from "../../Assets/Images/service3.png";
@@ -11,73 +8,97 @@ import service5 from "../../Assets/Images/service5.png";
 import service6 from "../../Assets/Images/service6.png";
 import service7 from "../../Assets/Images/service7.png";
 import service8 from "../../Assets/Images/service8.png";
+import spiralBg from "../../Assets/Svg/serviceBg.svg";
+import back from "../../Assets/Svg/arrowBack.svg";
+import next from "../../Assets/Svg/arrowNext.svg";
+
+const serviceData = [
+  { name: "Graphics Design", image: service1 },
+  { name: "Content Management", image: service2 },
+  { name: "Branding & Brand Identity Design", image: service3 },
+  { name: "Content Design", image: service4 },
+  { name: "Website Development", image: service5 },
+  { name: "Coaching", image: service6 },
+  { name: "Animations", image: service7 },
+  { name: "Digital Marketing", image: service8 },
+];
 
 const ServiceCarousel = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 4000,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [slideDirection, setSlideDirection] = useState(null);
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === serviceData.length - 1 ? 0 : prevIndex + 1
+    );
+    setSlideDirection("next");
   };
 
-  const settings2 = {
-    dots: true,
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 4000,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
+  const handleBack = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? serviceData.length - 1 : prevIndex - 1
+    );
+    setSlideDirection("prev");
   };
+
+  const handleTransitionEnd = () => {
+    setSlideDirection(null);
+  };
+
   return (
-    <Box padding="2% 2%" className="slider-container">
-      <Box textAlign="center" marginBottom="3%">
-        <Text fontSize="48px" fontWeight="semibold">
+    <Flex
+      justifyContent="center"
+      flexDirection="column"
+      alignItems="center"
+      backgroundColor="white"
+      minHeight="100vh"
+      padding="2% 7%"
+    >
+      <Flex justifyContent="flex-start" width="100%">
+        <Text fontSize="32px" fontWeight="semibold">
           Our Services
         </Text>
-      </Box>
+      </Flex>
 
-      <Slider {...settings}>
-        <Box>
-          <Image marginRight="5%" src={service1} />
+      <Flex
+        backgroundPosition="center"
+        backgroundImage={spiralBg}
+        backgroundRepeat="no-repeat"
+        width="1568px"
+        height="1105px"
+        justifyContent="center"
+        alignItems="center"
+        flexDirection="column"
+      >
+        <Box
+          style={{
+            transition: "transform 1s",
+            transform: `translateX(${
+              slideDirection === "next"
+                ? "-10%"
+                : slideDirection === "prev"
+                ? "10%"
+                : "0"
+            })`,
+          }}
+          onTransitionEnd={handleTransitionEnd}
+        >
+          <Box textAlign="center">
+            <Text fontSize="28px" marginBottom="2%" fontWeight="600">
+              {serviceData[currentIndex].name}
+            </Text>
+            <Image width="485px" src={serviceData[currentIndex].image} />
+            <Text marginTop="2%" color="#0298DA" fontWeight="600">
+              Click to view
+            </Text>
+          </Box>
         </Box>
-
-        <Box>
-          <Image src={service2} />
-        </Box>
-
-        <Box>
-          <Image src={service3} />
-        </Box>
-
-        <Box>
-          <Image src={service4} />
-        </Box>
-
-        <Box>
-          <Image src={service5} />
-        </Box>
-      </Slider>
-
-      <Slider {...settings2}>
-        <Box>
-          <Image src={service6} />
-        </Box>
-
-        <Box>
-          <Image src={service7} />
-        </Box>
-
-        <Box>
-          <Image src={service8} />
-        </Box>
-      </Slider>
-    </Box>
+        <Flex width="60vw" justifyContent="space-between" position="absolute">
+          <Image marginX="5%" onClick={handleBack} src={back} />
+          <Image marginRight="5%" onClick={handleNext} src={next} />
+        </Flex>
+      </Flex>
+    </Flex>
   );
 };
 
