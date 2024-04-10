@@ -9,6 +9,7 @@ import service6 from "../../Assets/Images/service6.png";
 import service7 from "../../Assets/Images/service7.png";
 import service8 from "../../Assets/Images/service8.png";
 import spiralBg from "../../Assets/Svg/serviceBg.svg";
+import spiralBg2 from "../../Assets/Svg/serviceBgMobile.svg";
 import back from "../../Assets/Svg/arrowBack.svg";
 import next from "../../Assets/Svg/arrowNext.svg";
 
@@ -51,11 +52,11 @@ const ServiceCarousel = () => {
       flexDirection="column"
       alignItems="center"
       backgroundColor="white"
-      minHeight="100vh"
+      minHeight={{ base: "50%", sm: "100vh" }}
       padding="2% 7%"
     >
       <Flex justifyContent="flex-start" width="100%">
-        <Text fontSize="32px" fontWeight="semibold">
+        <Text fontSize={{ base: "18px", sm: "32px" }} fontWeight="semibold">
           Our Services
         </Text>
       </Flex>
@@ -69,6 +70,7 @@ const ServiceCarousel = () => {
         justifyContent="center"
         alignItems="center"
         flexDirection="column"
+        display={{ base: "none", sm: "flex" }}
       >
         <Box
           style={{
@@ -96,6 +98,44 @@ const ServiceCarousel = () => {
         <Flex width="60vw" justifyContent="space-between" position="absolute">
           <Image marginX="5%" onClick={handleBack} src={back} />
           <Image marginRight="5%" onClick={handleNext} src={next} />
+        </Flex>
+      </Flex>
+
+      <Flex
+        backgroundPosition="center"
+        backgroundImage={spiralBg2}
+        backgroundRepeat="no-repeat"
+        width="410px"
+        height="277px"
+        justifyContent="center"
+        alignItems="center"
+        flexDirection="column"
+        display={{ base: "block", sm: "none" }}
+      >
+        <Box
+          style={{
+            transition: "transform 1s",
+            transform: `translateX(${
+              slideDirection === "next"
+                ? "-10%"
+                : slideDirection === "prev"
+                ? "10%"
+                : "0"
+            })`,
+          }}
+          onTransitionEnd={handleTransitionEnd}
+          marginTop="6%"
+        >
+          <Flex flexDirection="column" alignItems="center" textAlign="center">
+            <Text fontSize="12px" marginBottom="2%" fontWeight="600">
+              {serviceData[currentIndex].name}
+            </Text>
+            <Image width="159px" src={serviceData[currentIndex].image} />
+          </Flex>
+        </Box>
+        <Flex marginX="13%" marginTop="-20%" width="69vw" justifyContent="space-between" position="absolute">
+          <Image width="5%" marginX="5%" onClick={handleBack} src={back} />
+          <Image width="5%" marginRight="5%" onClick={handleNext} src={next} />
         </Flex>
       </Flex>
     </Flex>

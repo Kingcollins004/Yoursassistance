@@ -1,13 +1,14 @@
 import { Box, Text, Flex, Image } from "@chakra-ui/react";
 import React from "react";
 import Header from "../Components/Header";
-import Yoursassistance from "../Components/Yoursassistance";
+import Yoursassistance from "../Components/Yoursassistance/Yoursassistance";
 import pageCover from "../Assets/Svg/pageCover.svg";
-import Seedtime from "../Components/Seedtime";
+import Seedtime from "../Components/Seedtime/Seedtime";
 import Veracoth from "../Components/Veracoth";
 import Coastwide from "../Components/Coastwide";
 import Dreadit from "../Components/Dreadit";
 import Softlink from "../Components/Softlink";
+import EdwinCare from "../Components/EdwinCare/EdwinCare";
 
 const componentMapping = {
   Yoursassistance,
@@ -16,6 +17,7 @@ const componentMapping = {
   Coastwide,
   Dreadit,
   Softlink,
+  EdwinCare
   // Add more components as needed
 };
 

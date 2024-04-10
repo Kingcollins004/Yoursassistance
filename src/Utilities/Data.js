@@ -12,8 +12,17 @@ import img2 from "../Assets/Png/project1.png";
 import img3 from "../Assets/Png/project2.png";
 import img4 from "../Assets/Png/project3.png";
 import img5 from "../Assets/Png/project4.png";
+import EdwinCare from "../Assets/EdwinCare/edwinLogoG.jpg";
 
 const Projects = [
+  {
+    imgSrc: EdwinCare,
+    title: "Edwin Care Services",
+    titleNav: "EdwinCare",
+    link: "click to view project",
+    services: "Branding, Content Creation, Graphics Design, UI/UX, Website",
+    date: "01-2024",
+  },
   {
     imgSrc: yoursassistance,
     title: "Yoursassistance",

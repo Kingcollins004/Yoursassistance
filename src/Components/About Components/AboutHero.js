@@ -22,6 +22,7 @@ const AboutHero = () => {
         top="15%"
         width="86vw"
         justifyContent="space-between"
+        marginTop={{base: "5%", sm: "0"}}
       >
         <Flex
           justifyContent="flex-start"
@@ -29,8 +30,13 @@ const AboutHero = () => {
           alignItems="flex-start"
           width="50%"
         >
-          <Image src={quote} />
-          <Text textAlign="left" width="60%" color="#7A7A7A" fontSize="20px">
+          <Image width={{ base: "10%", sm: "3%" }} src={quote} />
+          <Text
+            textAlign="left"
+            width={{ base: "100%", sm: "40%" }}
+            color="#7A7A7A"
+            fontSize={{ base: "12px", sm: "14px" }}
+          >
             Yoursassistance exceptional product design ensures our website’s
             success.
             <br />
@@ -44,8 +50,12 @@ const AboutHero = () => {
           flexDirection="column"
           alignItems="flex-end"
         >
-          <Image width="20%" src={stars} />
-          <Text fontSize="40px" fontWeight="700" color="#7A7A7A">
+          <Image width={{ base: "30%", sm: "10%" }} src={stars} />
+          <Text
+            fontSize={{ base: "24px", sm: "32px" }}
+            fontWeight="700"
+            color="#7A7A7A"
+          >
             5+ Years
           </Text>
           <Text>Experience</Text>
@@ -57,16 +67,21 @@ const AboutHero = () => {
         flexDirection="column"
         alignItems="center"
         flex="1"
-        marginTop="2%"
+        marginTop={{base:"15%", sm: "2%"}}
       >
-        <Image position="relative" left="6.5%" src={lineS} />
+        <Image
+          width={{ base: "7%", sm: "3%" }}
+          position="relative"
+          left={{ base: "15%", sm: "6%" }}
+          src={lineS}
+        />
         <Button
           backgroundColor="white"
           color="#393637"
           borderRadius="50px"
-          width={{ base: "13%", sm: "135px" }}
-          height={{ base: "30px", sm: "45px" }}
-          fontSize={{ base: "14px", sm: "20px" }}
+          width={{ base: "30%", sm: "135px" }}
+          height={{ base: "35px", sm: "45px" }}
+          fontSize={{ base: "18px", sm: "20px" }}
           border="1px solid #393637"
           fontWeight="600"
           marginTop="-1%"
@@ -78,19 +93,25 @@ const AboutHero = () => {
           width={{ base: "100%", sm: "100%" }}
           color="#393637"
           fontWeight="600"
-          fontSize={{ base: "28px", sm: "86px" }}
-          lineHeight="90px"
+          fontSize={{ base: "6vw", sm: "86px" }}
+          lineHeight={{ base: "auto", sm: "90px" }}
         >
           Our <span style={{ color: "#0298DA" }}>Projects</span> speaks volume.{" "}
         </Text>
-        <Image position="relative" right="52%" marginTop="-3%" src={lineB} />
+        <Image
+          display={{ base: "none", sm: "block" }}
+          position="relative"
+          right="52%"
+          marginTop="-3%"
+          src={lineB}
+        />
 
         <Text
           width={{ base: "100%", sm: "70%" }}
           fontSize={{ base: "14px", sm: "24px" }}
-          color="#7A7A7A"
+          color={{ base: "#393637", sm: "#7A7A7A" }}
           // marginY={{ base: "2%", sm: "1%" }}
-          marginTop="-2%"
+          marginTop={{ base: "1%", sm: "-2%" }}
           marginBottom="2%"
         >
           It’s not the best product that sells but the best marketed product.
@@ -100,20 +121,20 @@ const AboutHero = () => {
             backgroundColor="#393637"
             color="white"
             borderRadius="50px"
-            width={{ base: "13%", sm: "239px" }}
-            height={{ base: "30px", sm: "72px" }}
+            width={{ base: "145px", sm: "239px" }}
+            height={{ base: "45px", sm: "72px" }}
             fontSize={{ base: "14px", sm: "20px" }}
             fontWeight="600"
             marginRight="2%"
           >
-            Explore Services
+            Explore Projects
           </Button>
           <Button
             backgroundColor="white"
             color="#393637"
             borderRadius="50px"
-            width={{ base: "13%", sm: "239px" }}
-            height={{ base: "30px", sm: "72px" }}
+            width={{ base: "145px", sm: "239px" }}
+            height={{ base: "45px", sm: "72px" }}
             fontSize={{ base: "14px", sm: "20px" }}
             border="1px solid #393637"
             fontWeight="600"
@@ -125,28 +146,28 @@ const AboutHero = () => {
 
       <Flex
         position="relative"
-        marginTop="-10%"
+        marginTop={{ base: "10%", sm: "-12%" }}
         justifyContent="space-between"
         flex="1"
       >
         <Image
           position="relative"
-          right="40%"
+          right={{ base: "15%", sm: "40%" }}
           marginTop="15%"
-          width={{ base: "100%", sm: "80%" }}
+          width={{ base: "60%", sm: "80%" }}
           src={HeroBMan}
         />
         <Image
           position="relative"
-          left="40%"
-          width={{ base: "100%", sm: "80%" }}
+          left={{ base: "-5%", sm: "40%" }}
+          width={{ base: "50%", sm: "80%" }}
           src={HeroWMan}
         />
       </Flex>
 
-      <Box position="relative" marginTop="-15%">
-        <Image src={arrowDown} />
-      </Box>
+      <Flex justifyContent="center" position="relative" marginTop={{base:"0", sm: "-12%"}}>
+        <Image width={{base: "50%", sm: "100%"}} src={arrowDown} />
+      </Flex>
     </Flex>
   );
 };

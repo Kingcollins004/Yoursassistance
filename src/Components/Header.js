@@ -1,12 +1,16 @@
-import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import logo from "../Assets/Svg/logo.svg";
 import logoB from "../Assets/Svg/logoBlack.svg";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import logoR from "../Assets/Svg/logoR.svg";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
-import HeaderServices from "./HeaderServices";
 import menu from "../Assets/Svg/menu.svg";
-import background from "../Assets/Svg/navCont.svg";
+import menuRed from "../Assets/Svg/menuRed.svg";
+import menuBlack from "../Assets/Svg/menuBlack.svg";
+import darkIcon from "../Assets/Svg/darkIcon.svg";
+import darkIconRed from "../Assets/Svg/darkIconRed.svg";
+import darkIconBlack from "../Assets/Svg/darkIconBlack.svg";
 
 const Header = () => {
   const { pathname } = useLocation();
@@ -20,78 +24,174 @@ const Header = () => {
         alignItems="center"
       >
         <Box flex="1">
-          <Image src={logo} />
+          <Box>
+            {pathname === "/projects" ? (
+              <Image width="80%" src={logoB} />
+            ) : pathname === "/services" ? (
+              <Image width="80%" src={logoR} />
+            ) : (
+              <Image width="80%" src={logo} />
+            )}
+          </Box>
         </Box>
-        <Box>
+        <Flex justifyContent="flex-end" flex="1">
           <Menu>
-            <MenuButton>
-              <Image src={menu} />
+            <MenuButton display="flex" justifyContent="flex-end">
+              {pathname === "/projects" ? (
+                <Image float="right" width="70px" src={menuBlack} />
+              ) : pathname === "/services" ? (
+                <Image float="right" width="70px" src={menuRed} />
+              ) : (
+                <Image float="right" width="70px" src={menu} />
+              )}
             </MenuButton>
             <MenuList>
               <MenuItem>
-                <NavLink
-                  to="/"
-                  activeStyle={{ color: "blue", fontSize: "18px" }}
-                >
-                  <Text>Home</Text>
-                </NavLink>
-              </MenuItem>
-              <MenuItem>
-                <NavLink
-                  to="/about"
-                  activeStyle={{ color: "blue", fontSize: "18px" }}
-                >
-                  <Text>About</Text>
-                </NavLink>
-              </MenuItem>
-              <MenuItem>
-                <Menu>
-                  <MenuButton>
-                    <Text>Services</Text>
-                  </MenuButton>
-
-                  <MenuList
-                    width="500px"
-                    marginTop="3%"
-                    border="1px solid #EEF6FE"
-                    boxShadow="0px 4px 19px rgba(0, 0, 0, 0.15)"
+                <Link to="/">
+                  <Text
+                    style={
+                      pathname === "/"
+                        ? {
+                            color: "#0298DA",
+                          } // if the path is services change the color to red
+                        : pathname === "/services"
+                        ? {
+                            color: "#ED3237",
+                          }
+                        : pathname === "/projects"
+                        ? {
+                            color: "#393637",
+                          }
+                        : null
+                    }
+                    color="#0298DA"
+                    fontWeight="600"
+                    textAlign="center"
+                    fontSize="16px"
                   >
-                    <HeaderServices />
-                  </MenuList>
-                </Menu>
+                    Home
+                  </Text>
+                </Link>
               </MenuItem>
 
               <MenuItem>
-                <NavLink
-                  to="/projects"
-                  activeStyle={{ color: "blue", fontSize: "18px" }}
-                >
-                  <Text>Projects</Text>
-                </NavLink>
+                <Link to="/services">
+                  <Text
+                    style={
+                      pathname === "/services"
+                        ? {
+                            color: "#ED3237",
+                          }
+                        : pathname === "/projects"
+                        ? {
+                            color: "#393637",
+                          }
+                        : null
+                    }
+                    color="#0298DA"
+                    fontWeight="600"
+                    textAlign="center"
+                    fontSize="16px"
+                  >
+                    Services
+                  </Text>
+                </Link>
               </MenuItem>
 
               <MenuItem>
-                <NavLink
-                  to="/contact-us"
-                  activeStyle={{ color: "blue", fontSize: "18px" }}
-                >
-                  <Text>Contact</Text>
-                </NavLink>
+                <Link to="/projects">
+                  <Text
+                    style={
+                      pathname === "/projects"
+                        ? {
+                            color: "#393637",
+                          } // if the path is services change the color to red
+                        : pathname === "/services"
+                        ? {
+                            color: "#ED3237",
+                          }
+                        : null
+                    }
+                    color="#0298DA"
+                    fontWeight="600"
+                    textAlign="center"
+                    fontSize="16px"
+                  >
+                    Projects
+                  </Text>
+                </Link>
               </MenuItem>
 
-              <Button
-                backgroundColor="#0298DA"
-                color="white"
-                borderRadius="50px"
-                paddingY="5%"
-                paddingX="20px"
-                marginLeft="5%"
-              >
-                Explore Services
-              </Button>
+              <MenuItem>
+                <Link to="/contact-us">
+                  <Text
+                    style={
+                      pathname === "/contact-us"
+                        ? {
+                            color: "#0298DA",
+                          } // if the path is services change the color to red
+                        : pathname === "/services"
+                        ? {
+                            color: "#ED3237",
+                          }
+                        : pathname === "/projects"
+                        ? {
+                            color: "#393637",
+                          }
+                        : null
+                    }
+                    color="#0298DA"
+                    fontWeight="600"
+                    textAlign="center"
+                    fontSize="16px"
+                  >
+                    Contact
+                  </Text>
+                </Link>
+              </MenuItem>
+
+              <Box width="100%" marginX="5%">
+                {pathname === "/projects" ? (
+                  <Flex alignItems="center">
+                    <Text
+                      fontSize="14px"
+                      fontWeight="600"
+                      marginRight="10px"
+                      color="#393637"
+                    >
+                      Switch to Dark Mode
+                    </Text>
+                    <Image src={darkIconBlack} />
+                  </Flex>
+                ) : pathname === "/services" ? (
+                  <Flex alignItems="center">
+                    <Text
+                      fontSize="14px"
+                      fontWeight="600"
+                      marginRight="10px"
+                      color="#ED3237"
+                    >
+                      Switch to Dark Mode
+                    </Text>
+                    <Image src={darkIconRed} />
+                  </Flex>
+                ) : (
+                  <Flex alignItems="center">
+                    <Text
+                      fontSize="14px"
+                      fontWeight="600"
+                      marginRight="10px"
+                      color="#0298DA"
+                    >
+                      Switch to Dark Mode
+                    </Text>
+                    <Image src={darkIcon} />
+                  </Flex>
+                )}
+              </Box>
             </MenuList>
           </Menu>
-        </Box>
+        </Flex>
       </Flex>
 
       {/* for Desktop view */}
@@ -107,14 +207,14 @@ const Header = () => {
         <Box>
           {pathname === "/projects" ? (
             <Image src={logoB} />
+          ) : pathname === "/services" ? (
+            <Image src={logoR} />
           ) : (
             <Image src={logo} />
           )}
         </Box>
 
         <Flex
-          backgroundImage={background}
-          backgroundRepeat="no-repeat"
           justifyContent="flex-start"
           alignItems="center"
           height="100px"
@@ -123,7 +223,6 @@ const Header = () => {
           float="right"
         >
           <Flex
-            width="484px"
             justifyContent="space-between"
             marginRight="8%"
             marginLeft="30px"
@@ -152,8 +251,8 @@ const Header = () => {
                   fontWeight="700"
                   borderRadius="50px"
                   textAlign="center"
-                  width="117px"
-                  padding="13px"
+                  padding="12px 34px"
+                  fontSize="14px"
                 >
                   Home
                 </Text>
@@ -179,8 +278,8 @@ const Header = () => {
                   fontWeight="700"
                   borderRadius="50px"
                   textAlign="center"
-                  width="117px"
-                  padding="13px"
+                  padding="12px 34px"
+                  fontSize="14px"
                 >
                   Services
                 </Text>
@@ -188,7 +287,7 @@ const Header = () => {
             </Box>
 
             <Box>
-              <NavLink to="/projects">
+              <Link to="/projects">
                 <Text
                   style={
                     pathname === "/projects"
@@ -206,16 +305,16 @@ const Header = () => {
                   fontWeight="700"
                   borderRadius="50px"
                   textAlign="center"
-                  width="117px"
-                  padding="13px"
+                  padding="12px 34px"
+                  fontSize="14px"
                 >
                   Projects
                 </Text>
-              </NavLink>
+              </Link>
             </Box>
 
             <Box>
-              <NavLink to="/contact-us">
+              <Link to="/contact-us">
                 <Text
                   style={
                     pathname === "/contact-us"
@@ -237,12 +336,22 @@ const Header = () => {
                   fontWeight="700"
                   borderRadius="50px"
                   textAlign="center"
-                  width="117px"
-                  padding="13px"
+                  padding="12px 34px"
+                  fontSize="14px"
                 >
                   Contact
                 </Text>
-              </NavLink>
+              </Link>
+            </Box>
+
+            <Box width="30px">
+              {pathname === "/projects" ? (
+                <Image src={darkIconBlack} />
+              ) : pathname === "/services" ? (
+                <Image src={darkIconRed} />
+              ) : (
+                <Image src={darkIcon} />
+              )}
             </Box>
           </Flex>
         </Flex>
